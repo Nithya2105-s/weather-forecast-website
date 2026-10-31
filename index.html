@@ -1,0 +1,187 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather & Climate Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main class="app">
+
+    <header>
+        <a class="brand" href="#">
+            <span>🌤️</span>
+            <div>
+                <b>Weather & Climate</b>
+                <small>Discover · Plan · Stay Prepared</small>
+            </div>
+        </a>
+
+        <nav>
+            <a class="active" href="#home">⌂ Home</a>
+            <a href="#forecast">▦ Forecast</a>
+            <a href="#climate">🍃 Climate</a>
+            <a href="#about">ⓘ About</a>
+        </nav>
+
+        <button id="themeToggle" class="theme">☾</button>
+    </header>
+
+    <section class="search-row" id="home">
+        <form id="searchForm">
+            <input id="cityInput" value="Chennai"
+                placeholder="Search for a city...">
+            <button type="submit">➤ Search</button>
+        </form>
+
+        <span class="date" id="dateText"></span>
+    </section>
+
+    <section class="main-grid">
+
+        <article class="card current">
+            <div class="scenery">
+
+                <div class="city">
+                    📍 <span id="cityName">Chennai, India</span>
+                </div>
+
+                <div class="hero">
+                    <div class="temp">
+                        <strong id="currentTemp">--</strong>
+                        <sup>°C</sup>
+                    </div>
+
+                    <h2>
+                        <span id="conditionText">Loading...</span>
+                        <span id="mainIcon">☀️</span>
+                    </h2>
+
+                    <p class="feels">
+                        🌡️ Feels like:
+                        <b id="feelsLike">--°C</b>
+                    </p>
+                </div>
+
+                <div class="lighthouse">🗼</div>
+                <div class="sunset">🌅</div>
+
+            </div>
+
+            <div class="stats">
+                <div>
+                    💧 Humidity
+                    <strong id="humidity">--%</strong>
+                </div>
+
+                <div>
+                    🌬️ Wind Speed
+                    <strong id="windSpeed">-- km/h</strong>
+                </div>
+
+                <div>
+                    🧭 Pressure
+                    <strong id="pressure">-- hPa</strong>
+                </div>
+            </div>
+        </article>
+
+        <div class="right">
+
+            <article class="card trend">
+                <h2>▥ Temperature Trend</h2>
+
+                <div class="chart">
+                    <div class="axis">
+                        <span>40°</span>
+                        <span>35°</span>
+                        <span>30°</span>
+                        <span>25°</span>
+                    </div>
+
+                    <svg id="trendChart"
+                        viewBox="0 0 600 170"
+                        preserveAspectRatio="none">
+                    </svg>
+                </div>
+            </article>
+
+            <article class="card climate" id="climate">
+                <h2>🍃 Climate Highlights</h2>
+
+                <div class="climate-stats">
+                    <div>
+                        🌡️
+                        <small>Max Temp</small>
+                        <b id="maxTemp">--°C</b>
+                    </div>
+
+                    <div>
+                        ❄️
+                        <small>Min Temp</small>
+                        <b id="minTemp">--°C</b>
+                    </div>
+
+                    <div>
+                        ☀️
+                        <small>UV Index</small>
+                        <b id="uvIndex">--</b>
+                    </div>
+
+                    <div>
+                        🌬️
+                        <small>Max Wind</small>
+                        <b id="maxWind">-- km/h</b>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <section class="bottom">
+
+        <article class="card forecast" id="forecast">
+            <h2>▦ 7-Day Forecast</h2>
+            <div id="forecastList" class="forecast-list">
+                Loading forecast...
+            </div>
+        </article>
+
+        <article class="mood" id="about">
+            <h2>Good Weather,<br>Good Mood!</h2>
+
+            <p>
+                Enjoy the beautiful day<br>
+                and take care of our planet 🌱
+            </p>
+
+            <div class="nature">🌈 🌳 🌻</div>
+
+            <div class="sign">
+                Reduce Pollution<br>
+                Save Water<br>
+                Go Green
+            </div>
+        </article>
+
+    </section>
+
+    <footer>
+        Made with ☀️ for brighter days · Weather data by Open-Meteo
+    </footer>
+
+    <p id="statusMessage" class="status"></p>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
